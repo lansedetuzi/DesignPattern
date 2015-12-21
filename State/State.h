@@ -13,6 +13,7 @@ public:
     virtual void operation() = 0;
     virtual void operationChangeState(Context *con) = 0;
 
+protected:
     bool changeState(Context *con, State *state);
 };
 
@@ -22,8 +23,8 @@ public:
     ConcreteStateA();
     ~ConcreteStateA(){}
 
-    void operation();
-    void operationChangeState(Context *con);
+    virtual void operation();
+    virtual void operationChangeState(Context *con);
 };
 
 class ConcreteStateB : public State
@@ -32,8 +33,8 @@ public:
     ConcreteStateB();
     ~ConcreteStateB(){}
 
-    void operation();
-    void operationChangeState(Context *con);
+    virtual void operation();
+    virtual void operationChangeState(Context *con);
 };
 
 #endif // STATE_H
